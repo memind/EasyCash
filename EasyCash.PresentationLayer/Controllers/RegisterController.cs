@@ -49,7 +49,7 @@ namespace EasyCash.PresentationLayer.Controllers
                 if (result.Succeeded)
                 {
                     MimeMessage mimeMessage = new MimeMessage();
-                    MailboxAddress mailboxAddressFrom = new MailboxAddress("EasyCash Admin", "emirkara21@gmail.com");
+                    MailboxAddress mailboxAddressFrom = new MailboxAddress("EasyCash Admin", "");// Enter your email
                     MailboxAddress mailboxAddressTo = new MailboxAddress("User", appUser.Email);
 
                     mimeMessage.From.Add(mailboxAddressFrom);
@@ -62,7 +62,7 @@ namespace EasyCash.PresentationLayer.Controllers
                     mimeMessage.Subject = "EasyCash Confirmation Code";
                     SmtpClient client = new SmtpClient();
                     client.Connect("smtp.gmail.com", 587, false);
-                    client.Authenticate("emirkara21@gmail.com", "pcdqamxtqcvzzzpe");
+                    client.Authenticate("", ""); // Enter your email and Google Authenticate token
                     client.Send(mimeMessage);
                     client.Disconnect(true);
                     
