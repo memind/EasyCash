@@ -1,0 +1,21 @@
+﻿@model ConfirmMailVM
+@{
+    Layout = null;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+ 
+<div class="container">
+    <br />
+    <br />
+    <form method="post">
+        <input type="hidden" class="form-control" asp-for="Email"/>
+        <br />
+
+        <label>Confirmation Code</label>
+        <input type="text" class="form-control" asp-for="ConfirmCode"/>
+        <br />
+
+        <button class="btn btn-primary">Activate Your Account</button>
+    </form>
+</div>
