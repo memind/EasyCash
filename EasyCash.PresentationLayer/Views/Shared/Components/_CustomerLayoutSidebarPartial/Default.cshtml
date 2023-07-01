@@ -56,6 +56,15 @@
                         </ul>
                     </li>
                     <li>
+                        <a><i class="fa fa-car"></i> Transfers <span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                            <li><a asp-controller="SendMoney" asp-action="Index" asp-route-myCurrency = "TL">Turkish Lira Transfers</a></li>
+                            <li><a asp-controller="SendMoney" asp-action="Index" asp-route-myCurrency="USD">Dollar Transfers</a></li>
+                            <li><a asp-controller="SendMoney" asp-action="Index" asp-route-myCurrency="EUR">Euro Transfers</a></li>
+                            <li><a asp-controller="SendMoney" asp-action="Index" asp-route-myCurrency="Other">Other Transfers</a></li>
+                        </ul>
+                    </li>
+                    <li>
                         <a><i class="fa fa-table"></i> Payments <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
                             <li><a href="tables.html">Bill Payments</a></li>

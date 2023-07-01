@@ -32,7 +32,7 @@ namespace EasyCash.PresentationLayer.Controllers
                 var user = await _userManager.FindByNameAsync(model.Username);
 
                 if (user.EmailConfirmed == true)
-                    return RedirectToAction("Index", "MyProfile");
+                    return RedirectToAction("Index", "MyAccounts");
 
                 // else mail adresini onayla
             }
