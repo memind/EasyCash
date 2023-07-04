@@ -14,7 +14,7 @@ namespace EasyCash.PresentationLayer.Controllers
                 RequestUri = new Uri("https://currency-exchange.p.rapidapi.com/exchange?from=USD&to=TRY&q=1.0"),
                 Headers =
     {
-        { "X-RapidAPI-Key", "" },
+        { "X-RapidAPI-Key", "5d0ae5bfb8msh8985281b05681f4p119989jsnae9f8862d986" },
         { "X-RapidAPI-Host", "currency-exchange.p.rapidapi.com" },
     },
             };
@@ -34,7 +34,7 @@ namespace EasyCash.PresentationLayer.Controllers
                 RequestUri = new Uri("https://currency-exchange.p.rapidapi.com/exchange?from=EUR&to=TRY&q=1.0"),
                 Headers =
     {
-        { "X-RapidAPI-Key", "" },
+        { "X-RapidAPI-Key", "5d0ae5bfb8msh8985281b05681f4p119989jsnae9f8862d986" },
         { "X-RapidAPI-Host", "currency-exchange.p.rapidapi.com" },
     },
             };
@@ -54,7 +54,7 @@ namespace EasyCash.PresentationLayer.Controllers
                 RequestUri = new Uri("https://currency-exchange.p.rapidapi.com/exchange?from=GBP&to=TRY&q=1.0"),
                 Headers =
     {
-        { "X-RapidAPI-Key", "" },
+        { "X-RapidAPI-Key", "5d0ae5bfb8msh8985281b05681f4p119989jsnae9f8862d986" },
         { "X-RapidAPI-Host", "currency-exchange.p.rapidapi.com" },
     },
             };
@@ -63,6 +63,26 @@ namespace EasyCash.PresentationLayer.Controllers
                 response3.EnsureSuccessStatusCode();
                 var body3 = await response3.Content.ReadAsStringAsync();
                 ViewBag.GbpToTry = body3;
+            }
+            #endregion
+
+            #region BTC/USD
+            var client4 = new HttpClient();
+            var request4 = new HttpRequestMessage
+            {
+                Method = HttpMethod.Get,
+                RequestUri = new Uri("https://currency-exchange.p.rapidapi.com/exchange?from=BTC&to=USD&q=1.0"),
+                Headers =
+    {
+        { "X-RapidAPI-Key", "5d0ae5bfb8msh8985281b05681f4p119989jsnae9f8862d986" },
+        { "X-RapidAPI-Host", "currency-exchange.p.rapidapi.com" },
+    },
+            };
+            using (var response4 = await client4.SendAsync(request4))
+            {
+                response4.EnsureSuccessStatusCode();
+                var body4 = await response4.Content.ReadAsStringAsync();
+                ViewBag.BtcToUsd = body4;
             }
             #endregion
 
